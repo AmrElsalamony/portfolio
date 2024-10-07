@@ -1,7 +1,8 @@
 :root{
   --primary-color:#fff;
   --main-color:rgb(26,124,200);
-  /* --main-color:orange; */
+  --main-color:purple;
+
 }
 @font-face {
   font-family: 'Montserrat';
@@ -50,31 +51,13 @@ body
 {
   margin: 0;
   padding: 0;
-  /* background-color: #f8f9fc;  */
-  background-image: url("../img/dots.png");
+  background-color: #f8f9fc; 
+  background-color: #fff; 
   overflow-x:hidden !important;
   font-family: "Montserrat";
 
   overflow-y: hidden;
  
-}
-.setting{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  left: 0px;
-  top:50%;
-  background-color: var(--main-color);
-  color: #fff;
-  border: none;
-  font-size: 25px;
-  height: 50px;
-  width: 46px;
-  border-radius: 0px 8px 8px 0px;
-}
-.setting:hover{
-  cursor: pointer;
 }
 
 
@@ -98,7 +81,6 @@ nav{
 }
 .theme-btn {
   background-color: var(--main-color);
-  background: linear-gradient(to right,var(--main-color) 10%,var(--main-color) 20%, rgba(0,0,0,1) 98%);
   padding:10px 12px;
   border: none;
   color: #fff;
@@ -349,6 +331,121 @@ nav{
 }
 
 
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 270px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.flip-card:hover{
+  cursor: pointer;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: var(--primary-color);
+  transform: rotateY(180deg);
+}
+
+.flip-card .line{
+  background-color: var(--main-color);
+  height: 3px;
+  width: 200px;
+}
+
+.bg-main{
+  background-color: var(--main-color);
+}
+
+.share{
+  font-size: 12px ;
+
+}
 
 
+.setting{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0px;
+  top:50%;
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  font-size: 25px;
+  height: 50px;
+  width: 46px;
+  border-radius: 0px 8px 8px 0px;
+  z-index: 3;
+}
+.setting:hover{
+  cursor: pointer;
+}
 
+
+.side-menu{
+  position: fixed;
+  left: 0;
+  top: 180px;
+  width: 220px;
+  height: 300px;
+  background-color: #fff;
+  z-index: 5;
+  transition:ease-in-out 0.5s;
+  left: -100%;
+  border-radius: 0px 15px 15px 0px;
+  border: 1px var(--main-color) solid;
+
+
+}
+
+ .close-side-menu{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: 18px;
+}
+.close-side-menu:hover{
+ cursor: pointer;
+}
+
+.flip-card-inner{
+  border: 1px var(--main-color) solid;
+}

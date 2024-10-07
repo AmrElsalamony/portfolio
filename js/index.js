@@ -25,3 +25,21 @@ nav.addEventListener("click", function() {
   exit.addEventListener("click", function() {
     menu.style.right = '-100%'
     });
+
+
+
+
+
+
+
+    let openSideMenu = document.querySelector('.setting')
+let closeSideMenu = document.querySelector('.close-side-menu')
+let sideMenu =  document.querySelector('.side-menu')
+
+openSideMenu.addEventListener("click", function() {
+    sideMenu.style.left = '0'
+  });
+
+  closeSideMenu.addEventListener("click", function() {
+    sideMenu.style.left = '-100%'
+    });
