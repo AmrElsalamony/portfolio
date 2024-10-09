@@ -1,39 +1,43 @@
 :root {
-  --body-background:#fff;
-  --text-head:#000;
-  --text-medium:rgba(0,0,0,0.5);
+  --body-background: #fff;
+  --text-head: #000;
+  --text-medium: rgba(0, 0, 0, 0.5);
   --after-color: #000;
   --primary-color: #fff;
   --main-color: rgb(26, 124, 200);
- 
+
 
 }
 
-.darkmode{
-  --body-background:#000;
-  --text-head:#fff;
-  --text-medium:rgba(255,255,255,0.5);
-  --after-color:rgba(0,0,0,0.5);
+.darkmode {
+  --body-background: #000;
+  --text-head: #fff;
+  --text-medium: rgba(255, 255, 255, 0.5);
+  --after-color: rgba(0, 0, 0, 0.5);
   --primary-color: #000;
 }
-.pink-theme{
-  --main-color:rgb(255, 92, 142) !important;
+
+.pink-theme {
+  --main-color: rgb(255, 92, 142) !important;
 }
-.blue-theme{
-  --main-color:rgb(30, 77, 183) !important;
+
+.blue-theme {
+  --main-color: rgb(30, 77, 183) !important;
 }
-.purple-theme{
-  --main-color:purple!important;
+
+.purple-theme {
+  --main-color: purple !important;
 }
-.lightBlue-theme{
+
+.lightBlue-theme {
   --main-color: rgb(26, 124, 200) !important;
 }
 
-.green-theme{
+.green-theme {
   --main-color: green !important;
 }
 
-.red-theme{
+.red-theme {
   --main-color: red !important;
 }
 
@@ -41,25 +45,27 @@
 
 
 
-.colors .pink{
+.colors .pink {
   background-color: pink;
 }
 
-.colors .purple{
+.colors .purple {
   background-color: purple;
 }
-.colors .blue{
+
+.colors .blue {
   background-color: blue;
 }
 
-.colors .lightBlue{
+.colors .lightBlue {
   background-color: rgb(26, 124, 200);
 }
 
-.colors .green{
+.colors .green {
   background-color: green;
 }
-.colors .red{
+
+.colors .red {
   background-color: red;
 }
 
@@ -67,6 +73,12 @@
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat-Regular.ttf');
 }
+
+@font-face {
+  font-family: 'es';
+  src: url('../fonts/EsportGraphRegular-BWPRl.ttf');
+}
+
 
 
 .text-main {
@@ -192,17 +204,17 @@ nav {
   right: -100%;
   top: 0 !important;
   bottom: 0 !important;
-  background-color: #fff;
+  background-color: var(--body-background);
   width: 400px;
   z-index: 999;
-  box-shadow: -2px 0px 4px 0px gray;
+  box-shadow: -2px 0px 4px 0px var(--main-color);
   transition: ease-in-out;
   transition: 0.7s;
   font-size: 30px;
 }
 
 .mobile-navbar .nav-menu a {
-  color: #000;
+  color: var(--text-head);
 }
 
 .mobile-navbar .nav-menu .active {
@@ -407,12 +419,11 @@ nav {
 
 
 
-.home h1 , .home .p1 , .home .p2{
+.home h1,
+.home .p1,
+.home .p2 {
   color: var(--text-head);
 }
-
-
-
 
 
 
@@ -480,6 +491,7 @@ nav {
 .flip {
   transform: rotateY(180deg);
 }
+
 .flip-back {
   transform: rotateY(0deg);
 }
@@ -552,13 +564,13 @@ nav {
   top: 180px;
   width: 250px;
   height: 335px;
-  background-color: #fff;
+  background-color: var(--body-background);
   z-index: 5;
   transition: ease-in-out 0.5s;
   left: -100%;
   border-radius: 0px 15px 15px 0px;
   border: 1px var(--main-color) solid;
-
+  color: var(--text-head);
 
 }
 
@@ -579,7 +591,8 @@ nav {
 .flip-card-inner {
   border: 1px var(--main-color) solid;
 }
-#dark{
+
+#dark {
   width: 40px;
   height: 40px;
   display: flex;
@@ -588,10 +601,12 @@ nav {
   font-size: 20px;
   background-color: #000;
   color: white;
-  border: #000 1px solid;
+  /* border: #fff 1px solid; */
+  border: #fff 1px solid;
+
 }
 
-#light{
+#light {
   width: 40px;
   height: 40px;
   display: flex;
@@ -600,23 +615,36 @@ nav {
   font-size: 20px;
   background-color: #000;
   color: yellow;
-  border: #000 1px solid;
+  border: #fff 1px solid;
 }
 
-.theme-dark-light{
+.theme-dark-light {
   width: fit-content !important;
 }
 
-.colors div{
+.colors div {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
-.colors div:hover{
-cursor: pointer;
+
+.colors div:hover {
+  cursor: pointer;
 }
 
-hr{
+hr {
   background-color: var(--main-color) !important;
 
+}
+
+nav .logo h1 {
+  font-size: 50px;
+  font-weight: 400;
+  font-family: "es";
+  height: fit-content;
+  width: fit-content;
+}
+
+body ,nav{
+  transition: 0.5s;
 }
