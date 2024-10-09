@@ -208,6 +208,8 @@ nav {
   width: 400px;
   z-index: 999;
   /* box-shadow: -2px 0px 4px 0px var(--main-color); */
+  box-shadow: none !important;
+  border: none !important;
   transition: ease-in-out;
   transition: 0.7s;
   font-size: 30px;
