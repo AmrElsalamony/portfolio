@@ -544,7 +544,7 @@ nav {
   align-items: center;
   position: fixed;
   left: 0px;
-  top: 50%;
+  top: calc(50vh - 25px);
   background-color: var(--main-color);
   color: #fff;
   border: none;
@@ -563,7 +563,7 @@ nav {
 .side-menu {
   position: fixed;
   left: 0;
-  top: 180px;
+  top: calc(50vh - 167.5px);
   width: 250px;
   height: 335px;
   background-color: var(--body-background);
@@ -616,8 +616,8 @@ nav {
   align-items: center;
   font-size: 20px;
   background-color: #000;
-  color: yellow;
-  border: #fff 1px solid;
+  color: #fff;
+  border: var(--main-color) 4px solid;
 }
 
 .theme-dark-light {
@@ -682,3 +682,18 @@ body ,nav{
 }
 
 
+.colors .red i{
+  opacity: 0;
+}
+.colors .green i{
+  opacity: 0;
+}
+.colors .purple i{
+  opacity: 0;
+}
+.colors .blue i{
+  opacity: 0;
+}
+.colors .pink i{
+  opacity: 0;
+}
