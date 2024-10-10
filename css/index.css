@@ -811,3 +811,40 @@ body ,nav{
   z-index: 3;
 }
 /* End skills Section */
+
+
+
+/* projects start */
+.projects .tabs{
+  border: 2px solid var(--main-color);
+  width: fit-content;
+  overflow: hidden;
+
+}
+.projects .nav-link{
+border: none;
+background-color: var(--body-background) !important;
+color: var(--text-head);
+width: fit-content !important;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+font-size: 15px;
+font-weight: 500;
+}
+
+.projects .tabs .active{
+  border: none;
+  background-color: var(--main-color) !important;
+  color: #fff;
+  }
+  
+
+#pills-All-tab{
+  border-right: 2px solid var(--main-color);
+}
+#pills-Brand-tab{
+  border-right: 2px solid var(--main-color);
+}
+/* projects end */
