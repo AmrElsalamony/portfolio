@@ -315,6 +315,7 @@ const swiper = new Swiper('.swiper', {
     delay: 0, // Delay between transitions (in milliseconds)
   },
   speed: 2500, 
+  simulateTouch: false, // Disable dragging interactions
   breakpoints: {
     0: {
       slidesPerView: 4, // 1 slide per view on small screens
@@ -341,20 +342,20 @@ const swiper = new Swiper('.swiper', {
       spaceBetween: 10,
     },
   },
-
+ 
 
 
  
 });
 
-const swiperContainer = document.querySelector('.swiper-wrapper');
+// const swiperContainer = document.querySelector('.swiper-wrapper');
 
-swiperContainer.addEventListener('mouseenter', () => {
-  swiper.autoplay.stop(); // Pause autoplay
-});
+// swiperContainer.addEventListener('mouseenter', () => {
+//   swiper.autoplay.stop(); // Pause autoplay
+// });
 
-swiperContainer.addEventListener('mouseleave', () => {
-  swiper.autoplay.start(); // Resume autoplay
-});
+// swiperContainer.addEventListener('mouseleave', () => {
+//   swiper.autoplay.start(); // Resume autoplay
+// });
 
 
