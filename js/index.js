@@ -366,4 +366,3 @@ const swiper = new Swiper('.swiper', {
 //   swiper.autoplay.start(); // Resume autoplay
 // });
 
-

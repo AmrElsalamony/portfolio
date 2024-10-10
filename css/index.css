@@ -703,7 +703,7 @@ body ,nav{
 
 /* Start skills Section */
 
-.skills h2{
+.skills h2 , .projects h2{
   width: fit-content;
   padding-bottom: 3px;
   border-bottom: 3px solid var(--main-color);
@@ -711,7 +711,7 @@ body ,nav{
   font-weight: bold;
 }
 
-.skills h6{
+.skills h6 ,.projects h6{
  
   color: var(--text-head);
 }
@@ -789,7 +789,7 @@ body ,nav{
   /* background-color: red; */
   margin: auto;
   font-weight: bolder;
-  font-size: 15px;
+  font-size: 13px;
   color: #000
 }
 
