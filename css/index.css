@@ -5,7 +5,7 @@
   --after-color: #000;
   --primary-color: #fff;
   --main-color: rgb(26, 124, 200);
-
+  
 
 }
 
@@ -508,12 +508,14 @@ nav {
   /* Safari */
   backface-visibility: hidden;
   color: var(--text-head) !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
   background-color: var(--primary-color);
   color: black;
+  
 }
 
 /* Style the back side */
@@ -634,10 +636,6 @@ nav {
   cursor: pointer;
 }
 
-hr {
-  background-color: var(--main-color) !important;
-
-}
 
 nav .logo h1 {
   font-size: 50px;
@@ -697,3 +695,113 @@ body ,nav{
 .colors .pink i{
   opacity: 0;
 }
+.hr{
+  background-color: var(--main-color);
+  height: 1px;
+  width: 100%;
+}
+
+/* Start skills Section */
+
+.skills h2{
+  width: fit-content;
+  padding-bottom: 3px;
+  border-bottom: 3px solid var(--main-color);
+  color: var(--text-head);
+  font-weight: bold;
+}
+
+.skills h6{
+ 
+  color: var(--text-head);
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card2 {
+  background-color: transparent;
+  width: 80px;
+  height: 80px;
+  /* border: 1px solid #f1f1f1; */
+ 
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  /* overflow: hidden; */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card2:hover .flip-card-inner2 {
+  transform: rotateY(180deg);
+ 
+}
+
+/* Position the front and back side */
+.flip-card-front2, .flip-card-back2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 50% !important;
+}
+
+
+.flip-card-front2:hover, .flip-card-back2:hover {
+  cursor: pointer;
+}
+
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front2 {
+  background-color: #fff;
+  color: black;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.flip-card-front2:hover {
+  border: 3px var(--main-color) solid;
+}
+
+/* Style the back side */
+.flip-card-back2 {
+  background-color: #fff;
+  color: white;
+  transform: rotateY(180deg);
+  border: 3px var(--main-color) solid;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.card-layer{
+  background-color: #fff;
+  opacity: 0.88 !important;
+  border-radius: 50%;
+}
+.card-layer h6{
+  /* background-color: red; */
+  margin: auto;
+  font-weight: bolder;
+  font-size: 15px;
+  color: #000
+}
+
+.swiper-wrapper {
+  transition-timing-function: linear !important ;
+ 
+}
+.swiper-slide-active .flip-card-inner2 {
+  transform: rotateY(180deg);
+}
+.swiper{
+  transition: none !important;
+}
+
+/* End skills Section */

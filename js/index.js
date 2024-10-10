@@ -301,3 +301,60 @@ else{
   document.getElementById("light").style.border = "var(--main-color) solid 4px"
   document.getElementById("dark").style.border = "#fff solid 1px"
 }
+
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  centeredSlides: true,
+  loop: true,
+  freeMode: true, // Enable Freemode
+  slidesPerView: 11, // Change this number based on your needs
+  spaceBetween: 10, // Space between slides
+  autoplay: {
+    delay: 0, // Delay between transitions (in milliseconds)
+  },
+  speed: 2500, 
+  breakpoints: {
+    0: {
+      slidesPerView: 4, // 1 slide per view on small screens
+      spaceBetween: 10, // Space between slides
+    },
+    640: {
+      slidesPerView: 5, // 1 slide per view on small screens
+      spaceBetween: 10, // Space between slides
+    },
+    768: {
+      slidesPerView: 7, // 2 slides per view on medium screens
+      spaceBetween: 10,
+    },
+    992: {
+      slidesPerView: 8, // 3 slides per view on large screens
+      spaceBetween: 10,
+    },
+    1000: {
+      slidesPerView: 10, // 3 slides per view on large screens
+      spaceBetween: 10,
+    },
+    1200: {
+      slidesPerView: 11, // 3 slides per view on large screens
+      spaceBetween: 10,
+    },
+  },
+
+
+
+ 
+});
+
+const swiperContainer = document.querySelector('.swiper-wrapper');
+
+swiperContainer.addEventListener('mouseenter', () => {
+  swiper.autoplay.stop(); // Pause autoplay
+});
+
+swiperContainer.addEventListener('mouseleave', () => {
+  swiper.autoplay.start(); // Resume autoplay
+});
+
+
