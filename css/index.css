@@ -789,8 +789,8 @@ body ,nav{
   /* background-color: red; */
   margin: auto;
   font-weight: bolder;
-  font-size: 13px;
-  color: #000
+  font-size: 12px;
+  color: var(--main-color)
 }
 
 .swiper-wrapper {
@@ -809,5 +809,8 @@ body ,nav{
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+.z{
+  z-index: 3;
 }
 /* End skills Section */
