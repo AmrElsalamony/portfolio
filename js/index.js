@@ -313,6 +313,7 @@ const swiper = new Swiper('.swiper', {
   spaceBetween: 10, // Space between slides
   autoplay: {
     delay: 0, // Delay between transitions (in milliseconds)
+    disableOnInteraction: false, // Stop autoplay on interaction
   },
   speed: 2500, 
   simulateTouch: false, // Disable dragging interactions
