@@ -316,6 +316,13 @@ const swiper = new Swiper('.swiper', {
   },
   speed: 2500, 
   simulateTouch: false, // Disable dragging interactions
+  allowTouchMove: false, // Disable touch interactions
+  keyboard: {
+    enabled: false, // Disable keyboard navigation
+  },
+  mousewheel: {
+    enabled: false, // Disable mousewheel control
+  },
   breakpoints: {
     0: {
       slidesPerView: 4, // 1 slide per view on small screens
