@@ -5,7 +5,9 @@
   --after-color: #000;
   --primary-color: #fff;
   --main-color: rgb(26, 124, 200);
-  
+
+  --card-bg: #fff;
+
 
 }
 
@@ -15,6 +17,8 @@
   --text-medium: rgba(255, 255, 255, 0.5);
   --after-color: rgba(0, 0, 0, 0.5);
   --primary-color: #000;
+  --card-bg: #292a2d;
+
 }
 
 .pink-theme {
@@ -410,7 +414,8 @@ nav {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--main-color);
-  height: 25%;
+  height: 5px !important;
+  border-radius: 5px;
 
 }
 
@@ -418,6 +423,100 @@ nav {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--main-color);
 }
+
+
+.progress-wrap {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.progress-wrap::after {
+  position: absolute;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f062';
+  text-align: center;
+  line-height: 46px;
+  font-size: 18px;
+  color: var(--main-color);
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.lightScrollIcon::after {
+  color: #ecedf3 !important;
+}
+
+.progress-wrap:hover::after {
+  opacity: 0;
+}
+
+.progress-wrap::before {
+  position: absolute;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f062';
+  text-align: center;
+  line-height: 46px;
+  font-size: 18px;
+  opacity: 0;
+  background-color: var(--main-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 2;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap:hover::before {
+  opacity: 1;
+}
+
+.progress-wrap svg path {
+  fill: none;
+}
+
+.progress-wrap svg.progress-circle path {
+  stroke: var(--main-color);
+  stroke-width: 4;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+
 
 
 
@@ -513,14 +612,14 @@ nav {
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: var(--primary-color);
+  background-color: var(--card-bg);
   color: black;
-  
+
 }
 
 /* Style the back side */
 .flip-card-back {
-  background-color: var(--primary-color);
+  background-color: var(--card-bg);
   transform: rotateY(180deg);
 }
 
@@ -645,11 +744,12 @@ nav .logo h1 {
   width: fit-content;
 }
 
-body ,nav{
+body,
+nav {
   transition: 0.5s;
 }
 
-.home{
+.home {
   background-image: url("../img/light.png");
   background-repeat: no-repeat;
   background-position: center -80px;
@@ -658,7 +758,7 @@ body ,nav{
 }
 
 
-.darkmode .home{
+.darkmode .home {
   background-image: url("../img/dark.png");
   background-repeat: no-repeat;
   background-position: center -60px;
@@ -668,34 +768,41 @@ body ,nav{
 
 
 @media only screen and (max-width: 992px) {
-.home .content{
-  margin-top: 100px !important;
-}
- .home {
-  background-position: center -65px;
-}
-.darkmode .home {
-  background-position: center -15px;
-}
+  .home .content {
+    margin-top: 100px !important;
+  }
+
+  .home {
+    background-position: center -65px;
+  }
+
+  .darkmode .home {
+    background-position: center -15px;
+  }
 }
 
 
-.colors .red i{
+.colors .red i {
   opacity: 0;
 }
-.colors .green i{
+
+.colors .green i {
   opacity: 0;
 }
-.colors .purple i{
+
+.colors .purple i {
   opacity: 0;
 }
-.colors .blue i{
+
+.colors .blue i {
   opacity: 0;
 }
-.colors .pink i{
+
+.colors .pink i {
   opacity: 0;
 }
-.hr{
+
+.hr {
   background-color: var(--main-color);
   height: 1px;
   width: 100%;
@@ -703,7 +810,8 @@ body ,nav{
 
 /* Start skills Section */
 
-.skills h2 , .projects h2{
+.skills h2,
+.projects h2 {
   width: fit-content;
   padding-bottom: 3px;
   border-bottom: 3px solid var(--main-color);
@@ -711,8 +819,9 @@ body ,nav{
   font-weight: bold;
 }
 
-.skills h6 ,.projects h6{
- 
+.skills h6,
+.projects h6 {
+
   color: var(--text-head);
 }
 
@@ -722,8 +831,9 @@ body ,nav{
   width: 80px;
   height: 80px;
   /* border: 1px solid #f1f1f1; */
- 
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
   /* overflow: hidden; */
 }
 
@@ -735,27 +845,30 @@ body ,nav{
   text-align: center;
   transition: transform 1s;
   transform-style: preserve-3d;
-  
+
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card2:hover .flip-card-inner2 {
   transform: rotateY(180deg);
- 
+
 }
 
 /* Position the front and back side */
-.flip-card-front2, .flip-card-back2 {
+.flip-card-front2,
+.flip-card-back2 {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
+  /* Safari */
   backface-visibility: hidden;
   border-radius: 50% !important;
 }
 
 
-.flip-card-front2:hover, .flip-card-back2:hover {
+.flip-card-front2:hover,
+.flip-card-back2:hover {
   cursor: pointer;
 }
 
@@ -766,6 +879,7 @@ body ,nav{
   color: black;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
+
 .flip-card-front2:hover {
   border: 3px var(--main-color) solid;
 }
@@ -780,12 +894,13 @@ body ,nav{
 
 }
 
-.card-layer{
+.card-layer {
   background-color: #fff;
   opacity: 0.88 !important;
   border-radius: 50%;
 }
-.card-layer h6{
+
+.card-layer h6 {
   /* background-color: red; */
   margin: auto;
   font-weight: bolder;
@@ -794,57 +909,195 @@ body ,nav{
 }
 
 .swiper-wrapper {
-  transition-timing-function: linear !important ;
- 
+  transition-timing-function: linear !important;
+
 }
+
 .swiper-slide-active .flip-card-inner2 {
   transform: rotateY(180deg);
 }
-.swiper{
+
+.swiper {
   transition: none !important;
 }
 
-.swiper:hover{
+.swiper:hover {
   cursor: pointer;
 }
-.z{
+
+.z {
   z-index: 3;
 }
+
 /* End skills Section */
 
 
 
 /* projects start */
-.projects .tabs{
+.projects .tabs {
   border: 2px solid var(--main-color);
   width: fit-content;
   overflow: hidden;
 
 }
-.projects .nav-link{
-border: none;
-background-color: var(--body-background) !important;
-color: var(--text-head);
-width: fit-content !important;
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-font-size: 15px;
-font-weight: 500;
+
+.projects .nav-link {
+  border: none;
+  background-color: var(--body-background) !important;
+  color: var(--text-head);
+  width: fit-content !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
 }
 
-.projects .tabs .active{
+.projects .tabs .active {
   border: none;
   background-color: var(--main-color) !important;
   color: #fff;
-  }
-  
+}
 
-#pills-All-tab{
+
+#pills-All-tab {
   border-right: 2px solid var(--main-color);
 }
-#pills-Brand-tab{
+
+#pills-Brand-tab {
   border-right: 2px solid var(--main-color);
+}
+
+.project {
+  width: 100%;
+  height: 380px;
+  background: var(--card-bg);
+  /* border: 1px var(--main-color) solid; */
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.project-image {
+  height: 230px;
+}
+
+.project .eye , .project .code{
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  /* border: 1px var(--main-color) solid; */
+  font-size: 12px;
+  text-decoration: none;
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: normal;
+}
+
+
+
+.div-new {
+  width: 100%;
+  position: relative;
+  direction: ltr;
+}
+/* Reset default progress bar styles*/
+progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Common progress bar styles */
+progress[value] {
+  background-color: transparent;
+  border-radius: 50px;
+  /* border: 1px solid #E5E6E1; */
+  width: 100%;
+  height: 5px;
+}
+progress[value]::-webkit-progress-bar {
+  background-color: transparent;
+  border-radius: 50px;
+}
+
+progress[value]::-moz-progress-bar {
+  background-color: transparent;
+  border-radius: 50px;
+}
+/* Option 2*/
+.progress {
+  position: absolute;
+}
+#green-progress[value]::-webkit-progress-value {
+  background: rgb(227 ,79 ,38);
+
+}
+#green-progress[value]::-moz-progress-bar {
+  background: rgb(227 ,79 ,38);
+
+}
+#orange-progress[value]::-webkit-progress-value {
+  background-color: rgb(41 ,101 ,241);
+}
+#orange-progress[value]::-moz-progress-bar {
+  background-color: rgb(41 ,101 ,241);
+}
+#red-progress[value]::-webkit-progress-value {
+  background-color: rgb(247 ,223 ,30)
+}
+#red-progress[value]::-moz-progress-bar {
+
+  background-color: rgb(247 ,223 ,30)
+}
+
+
+.html{
+  background: rgb(227 ,79 ,38);
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+.css{
+  background-color: rgb(41 ,101 ,241);
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+.js{
+  background-color: rgb(247 ,223 ,30);
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+.text-html{
+  color: var(--text-head);
+}
+
+.project .icons i{
+  color: var(--text-head);
+  transition: 0.4s;
+  font-size: 20px;
+
+}
+.project .icons i:hover{
+  color: var(--main-color);
+  transition: 0.4s;
+  cursor: pointer;
 }
 /* projects end */
+
+
+
+@media only screen and (max-width: 992px) {
+  .progress-wrap {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+  }
+}
