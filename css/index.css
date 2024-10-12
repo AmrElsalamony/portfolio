@@ -1123,3 +1123,20 @@ progress[value]::-moz-progress-bar {
     bottom: 10px;
   }
 }
+
+
+
+/* contact */
+
+.contact h2 {
+  width: fit-content;
+  padding-bottom: 3px;
+  border-bottom: 3px solid var(--main-color);
+  color: var(--text-head);
+  font-weight: bold;
+}
+
+.contact h6{
+  color: var(--text-head);
+
+}
