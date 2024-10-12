@@ -971,7 +971,7 @@ nav {
 
 .project {
   width: 100%;
-  height: 380px;
+  height: 385px;
   background: var(--card-bg);
   /* border: 1px var(--main-color) solid; */
   border-radius: 5px;
@@ -982,17 +982,39 @@ nav {
 
 .project-image {
   height: 230px;
+  overflow: hidden;
+ 
 }
 
+.project-image img{
+  transition: 0.4s;
+}
+.project-image:hover img {
+  transform: scale(1.1) rotate(2deg);
+  transition: 0.4s;
+  cursor: pointer;
+}
+.project-image .layer{
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.5s;
+
+}
+.project-image .layer:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: 0.5s;
+  cursor: pointer;
+}
 .project .eye , .project .code{
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   /* border: 1px var(--main-color) solid; */
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: none;
   background-color: var(--main-color);
   color: #fff;
