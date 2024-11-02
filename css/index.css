@@ -990,7 +990,7 @@ nav {
   transition: 0.4s;
 }
 .project-image:hover img {
-  transform: scale(1.1) rotate(2deg);
+  transform: scale(1.1) rotate(-2deg);
   transition: 0.4s;
   cursor: pointer;
 }
@@ -1139,4 +1139,54 @@ progress[value]::-moz-progress-bar {
 .contact h6{
   color: var(--text-head);
 
+}
+.contact input{
+  height: 45px;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid var(--main-color);
+}
+.contact textarea{
+  height: 150px;
+  resize: none;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid var(--main-color);
+
+}
+
+.contact textarea:focus{
+  outline: none;
+  box-shadow: none;
+  border: 1px solid green;
+
+}
+.contact input:focus{
+  outline: none;
+  box-shadow: none;
+  border: 1px solid green;
+
+}
+
+.contact button{
+
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+
+}
+
+/* ******** */
+
+footer{
+
+  height: 50px;
+  color: var(--text-head);
+}
+
+footer p {
+  width: fit-content;
+  height: fit-content;
 }

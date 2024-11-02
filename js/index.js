@@ -273,19 +273,19 @@ if (localStorage.getItem("color") == "red") {
 }
 else if (localStorage.getItem("color") == "green") {
   doGreen()
-} 
+}
 else if (localStorage.getItem("color") == "purple") {
   doPurple()
-} 
+}
 else if (localStorage.getItem("color") == "blue") {
   doBlue()
-} 
+}
 else if (localStorage.getItem("color") == "lightBlue") {
   doLightBlue()
-} 
+}
 else if (localStorage.getItem("color") == "pink") {
   doPink()
-} 
+}
 
 
 
@@ -296,7 +296,7 @@ if (localStorage.getItem("mode") == "dark") {
   document.getElementById("light").style.border = "#fff solid 1px"
   localStorage.setItem("mode", "dark")
 }
-else{
+else {
   document.body.classList.remove("darkmode")
   document.getElementById("light").style.border = "var(--main-color) solid 4px"
   document.getElementById("dark").style.border = "#fff solid 1px"
@@ -315,7 +315,7 @@ const swiper = new Swiper('.swiper', {
     delay: 0, // Delay between transitions (in milliseconds)
     disableOnInteraction: false, // Stop autoplay on interaction
   },
-  speed: 2500, 
+  speed: 2500,
   simulateTouch: false, // Disable dragging interactions
   allowTouchMove: false, // Disable touch interactions
   keyboard: {
@@ -354,10 +354,10 @@ const swiper = new Swiper('.swiper', {
       spaceBetween: 10,
     },
   },
- 
 
 
- 
+
+
 });
 
 // const swiperContainer = document.querySelector('.swiper-wrapper');
@@ -391,17 +391,104 @@ updateProgress();
 $(window).scroll(updateProgress);
 var offset = 50;
 var duration = 30;
-jQuery(window).on('scroll', function() {
+jQuery(window).on('scroll', function () {
   if (jQuery(this).scrollTop() > offset) {
     jQuery('.progress-wrap').addClass('active-progress');
   } else {
     jQuery('.progress-wrap').removeClass('active-progress');
   }
 });
-jQuery('.progress-wrap').on('click', function(event) {
+jQuery('.progress-wrap').on('click', function (event) {
   event.preventDefault();
-  jQuery('html, body').animate({scrollTop: 0}, duration);
+  jQuery('html, body').animate({ scrollTop: 0 }, duration);
   return false;
 })
 
+
+
+
+
+
+
+
+function validateForm(name, email, message) {
+  // Regex for name (allows letters, spaces, hyphens, and apostrophes)
+  const nameRegex = /^[A-Z][a-zA-Z'-.]+(?: [A-Z][a-zA-Z'-.]+)*$/;
+
+  // Regex for email
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  // Regex for message (1 to 500 characters)
+  const messageRegex = /^[\s\S]{1,500}$/;
+
+  let isValid = true;
+  let errors = [];
+
+  // Validate name
+  if (!nameRegex.test(name)) {
+    isValid = false;
+    errors.push("Invalid name format.");
+  }
+
+  // Validate email
+  if (!emailRegex.test(email)) {
+    isValid = false;
+    errors.push("Invalid email format.");
+  }
+
+  // Validate message
+  if (!messageRegex.test(message)) {
+    isValid = false;
+    errors.push("Message must be between 1 and 500 characters.");
+  }
+
+  return { isValid, errors };
+}
+
+
+
+var alert = document.getElementById("alert")
+var succuss = document.getElementById("succuss")
+
+var form_name = document.getElementById("name")
+var form_email = document.getElementById("email")
+var form_message = document.getElementById("message")
+
+
+function sendMail() {
+
+  var params = {
+    from_name: form_name.value,
+    email_id: form_email.value,
+    message: form_message.value
+  }
+
+  const validation = validateForm(params.from_name, params.email_id, params.message);
+  if (validation.isValid) {
+    console.log("Validation passed!");
+    emailjs.send("service_u1kcaak", "template_lkyhon7", params);
+
+    form_name.value = '';
+    form_email.value = '';
+    form_message.value = '';
+
+    alert.classList.replace("d-block" , "d-none");
+    succuss.classList.replace("d-none" , "d-block");
+
+    setTimeout(() => {
+      succuss.classList.replace("d-block" , "d-none");
+
+    }, 2000);
+
+  } else {
+    alert.classList.replace("d-none" , "d-block")
+    alert.innerText = validation.errors.shift('.') ; 
+   
+    console.log("Validation errors:", validation.errors);
+  }
+
+
+
+
+}
 
