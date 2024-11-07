@@ -484,7 +484,7 @@ function sendMail() {
     alert.classList.replace("d-none" , "d-block")
     alert.innerText = validation.errors.shift('.') ; 
    
-    console.log("Validation errors:", validation.errors);
+    // console.log("Validation errors:", validation.errors);
   }
 
 
