@@ -18,6 +18,16 @@ let nav = document.getElementById('open-menu')
 let exit = document.getElementById('close-menu')
 let menu = document.querySelector('.nav-menu')
 
+let all_nav = document.querySelectorAll(".mobile-navbar .nav-link") 
+
+for (let i = 0; i < all_nav.length; i++) {
+ 
+  all_nav[i].addEventListener("click", function () {
+    menu.style.right = '-100%'
+  });
+  
+}
+
 nav.addEventListener("click", function () {
   menu.style.right = '0'
 });
@@ -25,7 +35,6 @@ nav.addEventListener("click", function () {
 exit.addEventListener("click", function () {
   menu.style.right = '-100%'
 });
-
 
 
 
@@ -360,15 +369,6 @@ const swiper = new Swiper('.swiper', {
 
 });
 
-// const swiperContainer = document.querySelector('.swiper-wrapper');
-
-// swiperContainer.addEventListener('mouseenter', () => {
-//   swiper.autoplay.stop(); // Pause autoplay
-// });
-
-// swiperContainer.addEventListener('mouseleave', () => {
-//   swiper.autoplay.start(); // Resume autoplay
-// });
 
 
 
@@ -492,3 +492,89 @@ function sendMail() {
 
 }
 
+
+
+
+
+
+// Detecting scroll events to add/remove the "active" class on NavLinks
+
+// Get all nav links
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Function to add "active" class based on scroll position
+function setActiveLinkOnScroll() {
+  let currentSection = '';
+  
+  // Loop through each section to see which one is currently in view
+  document.querySelectorAll('.section').forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const scrollPosition = window.scrollY;
+
+    // Check if the section is in view
+    if (scrollPosition >= sectionTop - 100 && scrollPosition < sectionTop + sectionHeight - 100) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  // Remove "active" class from all links and add it to the one corresponding to the visible section
+  navLinks.forEach((link) => {
+    if (link.getAttribute('href')?.includes(currentSection)) {
+      link.classList.add('activee');
+    } else {
+      link.classList.remove('activee');
+    }
+  });
+}
+
+// Attach the function to the scroll event
+window.addEventListener('scroll', setActiveLinkOnScroll);
+
+// Initial call to set active link based on the initial scroll position
+setActiveLinkOnScroll();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// JavaScript to handle the scroll with an offset
+
+const navbarLinks = document.querySelectorAll('.nav-link'); // Changed variable name
+const scrollOffset = 80; // Changed variable name to scrollOffset
+
+navbarLinks.forEach(link => {
+  link.addEventListener('click', function(event) {
+    // Get the target section ID from the href attribute
+    const targetSectionId = this.getAttribute('href').substring(1); // Changed variable name to targetSectionId
+    const targetSectionElement = document.getElementById(targetSectionId); // Changed to targetSectionElement
+
+    // Calculate the position to scroll to, offset by the desired value
+    const scrollToPosition = targetSectionElement.offsetTop - scrollOffset; // Changed variable name to scrollToPosition
+
+    // Smooth scroll to the calculated position
+    window.scrollTo({
+      top: scrollToPosition,
+      behavior: 'instant'
+    });
+
+    // Prevent default anchor behavior (no jump, smooth scroll instead)
+    event.preventDefault();
+
+    // Optional: Add 'active' class to the clicked link and remove from others
+    navbarLinks.forEach(link => link.classList.remove('activee'));
+    this.classList.add('activee');
+  });
+});
