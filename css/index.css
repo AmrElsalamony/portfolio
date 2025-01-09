@@ -1250,7 +1250,7 @@ footer p {
 }
 
 ::selection {
-  color: var(--text-head);
+  color: #fff;
   background: var(--main-color);
 }
 
