@@ -540,8 +540,10 @@ setActiveLinkOnScroll();
 
 
 
+    document.getElementById('down-arrow').addEventListener('click', function() {
+      document.getElementById('down-arrow').scrollIntoView({ behavior: 'smooth' });
 
-
+    })
 
 
 
