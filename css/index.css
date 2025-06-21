@@ -83,6 +83,11 @@
   src: url('../fonts/EsportGraphRegular-BWPRl.ttf');
 }
 
+@font-face {
+  font-family: 'test';
+  src: url('../fonts/name/Right-m2WL2.ttf');
+}
+
 
 
 .text-main {
@@ -773,9 +778,9 @@ nav {
 
 
 nav .logo h1 {
-  font-size: 50px;
+  font-size: 64px;
   font-weight: 400;
-  font-family: "es";
+  font-family: "test";
   height: fit-content;
   width: fit-content;
 }
@@ -789,8 +794,10 @@ nav {
   background-image: url("../img/light.png");
   background-repeat: no-repeat;
   background-position: center -80px;
+  /* background-attachment: fixed !important; */
   background-size: auto;
   transition: 0.5s;
+  min-height: 100vh !important;
 }
 
 
@@ -1253,5 +1260,19 @@ footer p {
   color: #fff;
   background: var(--main-color);
 }
+
+
+    .floating-image {
+      animation: floatUpDown 2s ease-in-out infinite;
+    }
+
+    @keyframes floatUpDown {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+
+
 
 
