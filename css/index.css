@@ -1244,8 +1244,7 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  /* background-color: red; */
+  border-radius: 50% !important;
 }
 
 .box {
