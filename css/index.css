@@ -144,8 +144,12 @@ body {
 nav {
   height: 5rem;
   background-color: var(--body-background);
-  box-shadow: 0 4px 4px -2px var(--main-color);
+  /* box-shadow: 4px 4px 4px -2px var(--main-color); */
 
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3),  /* top shadow */
+            0 4px 6px rgba(0, 0, 0, 0.3);   /* bottom shadow */
+  
+ 
 }
 
 .desktop-navbar .img-logo {
