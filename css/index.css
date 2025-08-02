@@ -229,9 +229,9 @@ nav {
   height: fit-content !important;
   right: -100%;
   top: 0 !important;
-  bottom: 0 !important;
+  
   background-color: var(--body-background);
-  width: 250px !important;
+  width: 250 !important;
   z-index: 999;
   /* box-shadow: -2px 0px 4px 0px var(--main-color); */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
