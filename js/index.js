@@ -413,7 +413,7 @@ jQuery('.progress-wrap').on('click', function (event) {
 
 function validateForm(name, email, message) {
   // Regex for name (allows letters, spaces, hyphens, and apostrophes)
-  const nameRegex = /^[a-zA-Z'-.]+(?:[a-zA-Z'-.]+)*$/;
+  const nameRegex = /\p{L}{2,}/gu;
 
   // Regex for email
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
