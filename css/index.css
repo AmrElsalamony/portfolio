@@ -146,10 +146,12 @@ nav {
   background-color: var(--body-background);
   box-shadow: 4px 4px 4px -2px var(--main-color);
 
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3),  /* top shadow */
-            0 4px 6px rgba(0, 0, 0, 0.3);   /* bottom shadow */
-  
- 
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3),
+    /* top shadow */
+    0 4px 6px rgba(0, 0, 0, 0.3);
+  /* bottom shadow */
+
+
 }
 
 .desktop-navbar .img-logo {
@@ -229,7 +231,7 @@ nav {
   height: fit-content !important;
   right: -100%;
   top: 0 !important;
-  
+
   background-color: var(--body-background);
   width: 250 !important;
   z-index: 999;
@@ -321,6 +323,9 @@ nav {
 
 
 @media only screen and (max-width: 600px) {
+  .mobile-navbar {
+    display: block !important;
+  }
 
   .mobile-navbar .nav-menu {
     width: 250px !important;
@@ -1281,14 +1286,14 @@ footer p {
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   }
 } */
-.down-arrow{
+.down-arrow {
   color: var(--main-color);
   font-size: 35px;
   animation: floatUpDown 2s ease-in-out infinite;
 
 }
 
-.down-arrow:hover{
+.down-arrow:hover {
   cursor: pointer !important;
 }
 
@@ -1309,7 +1314,3 @@ footer p {
     transform: translateY(0);
   }
 }
-
-
-
-
