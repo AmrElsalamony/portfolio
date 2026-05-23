@@ -249,6 +249,9 @@ nav {
   color: var(--text-head);
 }
 
+nav li a:hover{
+  color: var(--main-color) !important;
+}
 
 
 .mobile-navbar .nav-menu ul li .activee {
@@ -1259,14 +1262,14 @@ footer p {
 }
 
 .box {
-  background-image: url('../img/me2.jpg');
+  background-image: url('../img/ChatGPT\ Image\ May\ 23\,\ 2026\,\ 10_49_13\ AM.png');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 380px;
-  width: 380px;
-  border-radius: 50% !important;
-  border: 8px solid var(--main-color);
+  height: 350px;
+  width: 350px !important;
+  border-radius: 50px !important;
+  border: 5px solid var(--main-color);
   /* box-shadow: 10px 15px 10px 10px var(--main-color) !important; */
   /* animation: floatUpDown 2s ease-in-out infinite; */
 
