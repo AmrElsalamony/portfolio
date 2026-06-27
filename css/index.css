@@ -1156,6 +1156,10 @@ progress[value]::-moz-progress-bar {
   transition: 0.4s;
   cursor: pointer;
 }
+.project .icons img:hover{
+  transition: 0.4s;
+  cursor: pointer;
+}
 
 /* projects end */
 
